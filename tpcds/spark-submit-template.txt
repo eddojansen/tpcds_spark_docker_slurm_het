@@ -1,0 +1,4 @@
+$SPARK_HOME/bin/spark-submit \
+  --master spark://${MASTER}:7077 \
+  --conf spark.driver.extraClassPath=${SPARK_RAPIDS_PLUGIN_JAR}:${SPARK_RAPIDS_PLUGIN_INTEGRATION_TEST_JAR}:${SPARK_CUDF_JAR} \
+  --conf spark.executor.extraClassPath=/usr/local/cuda/lib64:/usr/local/cuda/lib64:/opt/ucx/lib:${SPARK_RAPIDS_PLUGIN_JAR}:${SPARK_RAPIDS_PLUGIN_INTEGRATION_TEST_JAR}:${SPARK_CUDF_JAR} \
